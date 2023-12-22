@@ -562,14 +562,13 @@ body{
 }
 .user-chat {
   display: flex;
-  height: 100vh;
-  background-image: url(https://i.pinimg.com/736x/85/ec/df/85ecdf1c3611ecc9b7fa85282d9526e0.jpg);
+  background-image: url(https://i.pinimg.com/736x/85/ec/df/85ecdf1….jpg);
   background-size: contain;
   flex-direction: column;
   padding: 0px 80px 0 60px;
   position: relative;
+  margin-right: 0px;
   overflow-y: scroll;
-  margin-right: 5px;
 }
 .message-bar{
   max-width: 25%;
@@ -590,35 +589,13 @@ body{
   color: white;
   border: 7px solid #1d2a34;
 }
-/* .sender-message-bar::before{
-  content: "";
-  background-color: #1d2a34;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  left: 53px;
-  top: 21px;
-  clip-path: polygon(50% 0, 100% 100%, 0% 100%);
-  transform: rotate(61deg);
-  border-radius: 5px;
-} */
+
 .reciver-message-bar{
   background-color: #00b485;
   align-self: flex-end;
   border: 7px solid #00b485;
 }
-/* .reciver-message-bar::before{
-  content: "";
-  background-color: #00b485;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  right: 70px;
-  top: 140px;
-  clip-path: polygon(50% 0, 100% 100%, 0% 100%);
-  transform: rotate(61deg);
-  border-radius: 5px;
-} */
+
 .message-bar>img{
   width: 100%;
   border: 4px solid white;
@@ -640,3 +617,50 @@ body{
   color: #00b485
 }
 
+section.user-chat-window {
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+button.toggle-plus-btn {
+  border: none;
+  color: white;
+  font-size: 30px;
+  border-radius: 100%;
+  background-color: #1d2a34;
+  padding: 5px 3px 5px 3px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.message-type-bar input[type="text"] {
+  padding: 14px;
+    width: 980px;
+    border-radius: 10px;
+    border: none;
+}
+
+.send-button-container>button {
+  background-color: #1d2a34;
+  border: none;
+  padding: 11px;
+  font-size: 18px;
+  color: #00b485;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.data-share-bar {
+  margin-bottom: 123px;
+    position: absolute;
+    bottom: -58px;
+    width: 100%;
+    background-color: #101920;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
