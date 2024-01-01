@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="901790561207-kbni41il6e8e96518plt982icg663d1t.apps.googleusercontent.com">
+    <!-- Load the Google API client library -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <script src="./app.js"></script>
     <link rel="icon" type="image/x-icon" href="./src/whatsapp.png">
     <title>WhatsApp-Clone</title>
-     <link rel="stylesheet" href="./style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
-     <script src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div id="welcome-page" class="main-loader-container">
         <div class="loader-wall">
@@ -31,7 +36,14 @@
             </div>
         </div>
     </div>
-
+<div class="full-wdt-header"><div class="login">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+    data-client_id="901790561207-kbni41il6e8e96518plt982icg663d1t.apps.googleusercontent.com"
+    data-callback="handleCredentialResponse">
+</div><div id="sign-in" class="g-signin2" data-onsuccess="onSignIn"></div><div class="sign-out"><a href="#" onclick="signOut();">Sign out</a></div></div></div>
+<div class="container">
+    <div class="wrapper">
     <main class="parent_container">
     <div class="col-1">
    <header class="header-main">
@@ -61,7 +73,7 @@
               </div>
         </div>
         <div class="chat-list">
-            <div class="chat-bar">
+            <!-- <div class="chat-bar">
                 <div class="user-info">
                 <div class="profile-image">
                     <img src="https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMwNjgzNDh8&ixlib=rb-4.0.3&q=85" alt="">
@@ -186,13 +198,14 @@
                 </div>
                 </div>
                
-            </div>
+            </div> -->
         </div>
     </div>
+    <div class="install-banner"><img width="64" height="64" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-whatsapp-social-media-justicon-flat-justicon.png" alt="external-whatsapp-social-media-justicon-flat-justicon"/><a href="https://www.whatsapp.com/download">Install the APP for Windows ></a></div>
   </section>
     </div>
     <div class="col-2">
-        <header class="header-main">
+        <header class="header-main chat-header-position">
         <nav class="nav_bar justify-content-btw">   
 
         <div class="profile-icon">
@@ -209,7 +222,11 @@
         </header>
         <section class="user-chat-window">
             <div class="user-chat chat-container">
-                <div class="sender-message-bar message-bar">Have check the CSS code of your last project, its required more practice to write a clean code</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
+                <div class="sender-message-bar message-bar">Hello<div class="name">Alexandra</div></div>
+                   <!-- This div is temporary -->
+                   <div class="dynamic-data"></div>
+                   <!-- This div is temporary -->
+                <!-- <div class="sender-message-bar message-bar">Have check the CSS code of your last project, its required more practice to write a clean code</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
                 <div class="reciver-message-bar message-bar">Yes, thankypu for reviewing my code, i will improve it</div><span class="reciver-chat-arrow"><i class="fa-solid fa-play"></i></span>
                 <div class="sender-message-bar message-bar"><img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMxNTc5NTZ8&ixlib=rb-4.0.3&q=85" alt=""></div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
                 <div class="reciver-message-bar message-bar">Okay i will copy that code</div><span class="reciver-chat-arrow"><i class="fa-solid fa-play"></i></span>
@@ -221,21 +238,59 @@
                 <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
                 <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
                 <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
+                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span> -->
             </div>
             <div class="data-share-bar">
                 <div class="toggle-menu">
-                   <button class="toggle-plus-btn"><i class="fa-solid fa-plus"></i></button>
+                    <div class="tool-tip"><div class="contact"><i class="fa-solid fa-user"></i></div><div class="image"><i class="fa-solid fa-file-image"></i></div><div class="document"><i class="fa-solid fa-file"></i></div><div class="video"><i class="fa-solid fa-video"></i></div></div>
+                   <button id="toggle-btn" class="toggle-plus-btn"><i class="fa-solid fa-plus"></i></button>
                 </div>
                 <div class="message-type-bar">
-                    <input type="text">
+                    <input  id="input_data" type="text">
                 </div>
                 <div class="send-button-container">
-                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    <button  onclick="submitMessage ()" id="submit-btn"  type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                 </div>
             </div>
         </section>
     </div>
     </main>
+</div>
+</div>
+<!-- <script type="module">
+
+    // Import the functions you need from the SDKs you need
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+
+  
+    const firebaseConfig = {
+  
+      apiKey: "AIzaSyBy02Nbi5Py3pLZQ8s5T9VFMVdqtM5sRys",
+  
+      authDomain: "whatsapp-clone-login-409608.firebaseapp.com",
+  
+      projectId: "whatsapp-clone-login-409608",
+  
+      storageBucket: "whatsapp-clone-login-409608.appspot.com",
+  
+      messagingSenderId: "901790561207",
+  
+      appId: "1:901790561207:web:677d14914e38037d5a6e32",
+  
+      measurementId: "G-RJYB8ZHWGB"
+  
+    };
+  
+  
+    // Initialize Firebase
+  
+    const app = initializeApp(firebaseConfig);
+  
+    const analytics = getAnalytics(app);
+  
+  </script> -->
 </body>
 </html>

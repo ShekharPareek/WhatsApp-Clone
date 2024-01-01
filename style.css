@@ -1,12 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+
+
 body{
     margin:0;
     padding:0;
     overflow: hidden;
-    font-family: 'Helvetica Neue', sans-serif;
 }
 *{
 
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* scroll-bar -design */
@@ -17,7 +25,7 @@ body{
 ::-webkit-scrollbar-thumb {
   background: #a5b1b5; 
   border-radius: 10px;
-  height:50px;
+  height:100px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -66,6 +74,20 @@ body{
     justify-content: space-between;
 }
 
+
+/* common-classes end */
+
+
+.container{
+  width: 100%;
+  display: block;
+  color: #fff;
+}
+.wrapper{
+  display: block;
+  margin: 0 auto;
+}
+
 .col-1{
     width: 25%;
     border-right:0.25px solid #353e45;
@@ -105,14 +127,7 @@ body{
   animation-iteration-count: infinite;
   animation-delay: -2s;
 }
-.encrytion-ey{
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    height: 16px;
-    justify-content: center;
 
-}
 .brand-name>h2{
     font-size: 21px;
     font-weight:400;
@@ -205,6 +220,7 @@ body{
 
   .parent_container{
     display: none;
+    margin-top: -100px;
   }
 
   .profile-icon {
@@ -230,7 +246,7 @@ body{
 .list-menu{
     display: flex;
     align-items: center;
-    gap:31px;
+    gap:27px;
 }
 
   .list-items{
@@ -295,6 +311,8 @@ body{
     align-items: center;
     gap: 7px;
     height: 16px;
+    justify-content: center;
+    margin-top:10px;
 
 }
 .brand-name>h2{
@@ -404,12 +422,6 @@ body{
   
 }
 
-.list-menu{
-    display: flex;
-    align-items: center;
-    gap:31px;
-}
-
   .list-items{
     list-style: none;
     display: flex;
@@ -435,6 +447,7 @@ body{
   .col-2 {
     width: 75%;
     display: block;
+    position: relative;
   }
 
 .chat-search-container{
@@ -449,7 +462,7 @@ body{
     width: 100%;
   }
   .chat-search-container form input{
-    padding: 6px;
+    padding: 10px;
     width: 100%;
     border-radius: 10px;
     border: none;
@@ -474,9 +487,8 @@ body{
 }
 .chat-list {
   width: 100%;
-  overflow-y: scroll;
-  height: 60%;
-  border-bottom:0.25px solid #353e45;
+    overflow-y: scroll;
+    height: 65%;
   }
   .profile-image{
     margin-right: 7px;
@@ -499,6 +511,7 @@ body{
     color: white;
     padding-right: 15px;
   }
+  
 
     .chat-user-id {
       display: flex;
@@ -570,9 +583,11 @@ body{
   position: relative;
   margin-right: 0px;
   overflow-y: scroll;
+  height:100%;
+  
 }
 .message-bar{
-  max-width: 25%;
+  max-width: 40%;
   width: fit-content;
   color: white;
   font-size: 14px;
@@ -582,6 +597,7 @@ body{
   display: block;
   height: fit-content;
   border-radius: 12px 0px 12px 12px;
+  position: relative;
   
 }
 .sender-message-bar{
@@ -612,7 +628,7 @@ body{
 .reciver-chat-arrow{
   display: block;
   position: absolute;
-  top: 142px;
+  top: 152px;
   transform: rotate(203deg);
   right: 78px;
   color: #00b485
@@ -626,42 +642,205 @@ section.user-chat-window {
 
 button.toggle-plus-btn {
   border: none;
-  color: white;
-  font-size: 30px;
-  border-radius: 100%;
-  background-color: #1d2a34;
-  padding: 5px 3px 5px 3px;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+    font-size: 19px;
+    border-radius: 100%;
+    background-color: #1d2a34;
+    padding: 5px 3px 5px 3px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .message-type-bar input[type="text"] {
-  padding: 14px;
-    width: 980px;
-    border-radius: 10px;
-    border: none;
+  padding: 10px;
+  width: 840px;
+  border-radius: 10px;
+  border: none;
 }
+
 
 .send-button-container>button {
   background-color: #1d2a34;
-  border: none;
-  padding: 11px;
-  font-size: 18px;
-  color: #00b485;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    padding: 5px 9px 5px 9px;
+    font-size: 18px;
+    color: #00b485;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-right: 13px;
 }
 
 .data-share-bar {
-  margin-bottom: 123px;
-    position: absolute;
-    bottom: -58px;
-    width: 100%;
-    background-color: #101920;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  margin-bottom: 0;
+  bottom: 0;
+  width: 1045px;
+  background-color: #101920;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 7px;
+  position: fixed;
+  height: 70px;
+  transform: translate(0%, 0%);
 }
+.toggle-menu {
+  margin-right: 13px;
+  position: relative;
+}
+
+.send-button-container {
+  margin-left: 13px;
+}
+
+
+
+.full-wdt-header{
+  width: 100%;
+  background-color:#009688;
+  display: block;
+  height: 0px;
+  margin-bottom: 20px;
+}
+.install-banner {
+  background: #101920;
+    width: auto;
+    border: none;
+    position: absolute;
+    top: 90%;
+    height: 20%;
+    padding-right: 26px;
+    padding-top: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.install-banner>img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.install-banner>a{
+  text-decoration: none;
+  color: #00b485;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-left: 0px;
+  font-size: 14px;
+}
+
+.name {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  top: 100%;
+  margin-top: 10px;
+  font-size: 9px;
+}
+
+/* temoprary class */
+
+.dynamic-data{
+  display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+/* __________________________ */
+
+
+.tool-tip {
+  position: absolute;
+    left: -5px;
+    right: 0;
+    bottom: -15px;
+    border-right: 0.25px solid #353e45;
+    padding: 6px 12px 5px 14px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background-color: #101920;
+    cursor: pointer;
+    display: none;
+    z-index: -1;
+    width: 45px;
+    height: 147px;
+    border-top: 0.25px solid #353e45;
+    border-left: 0.25px solid #353e45;
+    border-bottom: none;
+}
+.show{
+  display:block;
+}
+/* for rotate icons */
+.rotate-icon{
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+.tool-tip>div:hover {
+  color: #a5b1bb;
+}
+
+
+/* Media screens */
+
+@media screen and (min-width: 600px) {
+  /* //For Tablets */
+      .wrapper {
+          width: 100;
+      }
+  }
+  
+  @media screen and (min-width: 768px) {
+  /* //For Laptops */
+      .wrapper {
+          width: 738px;
+      }
+  }
+  
+  @media screen and (min-width: 992px) {
+  /* //For Large Laptops */
+      .wrapper {
+          width: 962px;
+      }
+  }
+  
+  @media screen and (min-width: 1280px) {
+  /* //For Big TV's (HD Screens)  */
+      .wrapper {
+          width: 1600px;
+      }
+      .data-share-bar {
+        margin-bottom: 0;
+        bottom: 0;
+        width: 1182px;
+        background-color: #101920;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 7px;
+        position: fixed;
+        height: 70px;
+        transform: translate(0%, 0%);
+        left: 25%;
+        right: ;
+      }
+  }
+  
+  
+  @media screen and (min-width: 1920px) {
+  /* //For Projectors or Higher Resolution Screens (Full HD) */
+      .wrapper {
+          width: 1890px;
+      }
+  }
+  @media screen and (min-width: 3840px) {
+  /* //For 4K Displays (Ultra HD) */
+      .wrapper {
+          width: 3810px;
+      }
+  }
