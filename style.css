@@ -562,7 +562,8 @@ body{
 }
 .user-chat {
   display: flex;
-  background-image: url(https://i.pinimg.com/736x/85/ec/df/85ecdf1….jpg);
+  background-image: url(https://i.pinimg.com/736x/5a/11/bb/5a11bb1d77ee734b4f16ad3b2d6bc189.jpg
+  );
   background-size: contain;
   flex-direction: column;
   padding: 0px 80px 0 60px;
