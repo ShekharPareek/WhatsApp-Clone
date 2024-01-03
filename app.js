@@ -42,6 +42,8 @@ const submitBtn = document.getElementById("submit-btn");
 function submitMessage () {
     const inputElement = document.getElementById("input_data");
     let chatData = inputElement.value;
+
+    // To remove whitespace from the input 
     if (chatData.trim() !== "") {
     let chatEntry = {
         "time": new Date().toISOString(),
@@ -114,8 +116,8 @@ setTimeout(() => {
                 </div>
             </div>
         </div>
-    `;
-        }
+    `
+        };
     
         const chatListElement = document.querySelector(".chat-list");
         if (chatListElement) {
@@ -144,76 +146,6 @@ setTimeout(() => {
 });
 
 
-// Google signin and Signout
 
 
 
-// Load the Google API client library asynchronously
-(function () {
-    var script = document.createElement('script');
-    script.src = 'https://apis.google.com/js/platform.js';
-    script.async = true;
-    script.defer = true;
-    script.onload = function () {
-        // This function is called when the Google API script is loaded
-        gapi.load('auth2', function () {
-            // Initialize the GoogleAuth object
-            gapi.auth2.init({
-                client_id: 'YOUR_CLIENT_ID' // Replace with your actual client ID
-            }).then(onGoogleApiLoaded).catch(onFailure);
-        });
-    };
-    document.head.appendChild(script);
-})();
-
-// Define the function handling Google API loaded event
-function onGoogleApiLoaded() {
-    // Google Sign-In
-    function onSignIn(googleUser) {
-        let profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId());
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-    }
-
-    // Google Signout
-    function signOut() {
-        let auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-        });
-    }
-}
-
-// Failure handler for Google Sign-In
-function onFailure(error) {
-    console.error('Google Sign-In failed: ', error);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // tabs changes     
-//   $(".section:nth-of-type(1)").show()
-//   $(".user-info").on('click',function(event){
-//     var target=$(this).attr("id")
-//     $(".section").hide()
-//     $("[data-section="+target+"]").show()
-//   });

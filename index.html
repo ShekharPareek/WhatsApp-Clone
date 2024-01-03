@@ -1,296 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="901790561207-kbni41il6e8e96518plt982icg663d1t.apps.googleusercontent.com">
-    <!-- Load the Google API client library -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <script src="./app.js"></script>
     <link rel="icon" type="image/x-icon" href="./src/whatsapp.png">
     <title>WhatsApp-Clone</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <!-- Welcome page and loader -->
     <div id="welcome-page" class="main-loader-container">
         <div class="loader-wall">
             <div class="whatsapp-logo-relect">
-                <svg class="whatsapp-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 39 39"><path class="path-1 svg-elem-1" fill="#fff" d="M10.7 32.8l.6.3c2.5 1.5 5.3 2.2 8.1 2.2 8.8 0 16-7.2 16-16 0-4.2-1.7-8.3-4.7-11.3s-7-4.7-11.3-4.7c-8.8 0-16 7.2-15.9 16.1 0 3 .9 5.9 2.4 8.4l.4.6-1.6 5.9 6-1.5z"></path><path class="path-2 svg-elem-2" fill="#FFF" d="M32.4 6.4C29 2.9 24.3 1 19.5 1 9.3 1 1.1 9.3 1.2 19.4c0 3.2.9 6.3 2.4 9.1L1 38l9.7-2.5c2.7 1.5 5.7 2.2 8.7 2.2 10.1 0 18.3-8.3 18.3-18.4 0-4.9-1.9-9.5-5.3-12.9zM19.5 34.6c-2.7 0-5.4-.7-7.7-2.1l-.6-.3-5.8 1.5L6.9 28l-.4-.6c-4.4-7.1-2.3-16.5 4.9-20.9s16.5-2.3 20.9 4.9 2.3 16.5-4.9 20.9c-2.3 1.5-5.1 2.3-7.9 2.3zm8.8-11.1l-1.1-.5s-1.6-.7-2.6-1.2c-.1 0-.2-.1-.3-.1-.3 0-.5.1-.7.2 0 0-.1.1-1.5 1.7-.1.2-.3.3-.5.3h-.1c-.1 0-.3-.1-.4-.2l-.5-.2c-1.1-.5-2.1-1.1-2.9-1.9-.2-.2-.5-.4-.7-.6-.7-.7-1.4-1.5-1.9-2.4l-.1-.2c-.1-.1-.1-.2-.2-.4 0-.2 0-.4.1-.5 0 0 .4-.5.7-.8.2-.2.3-.5.5-.7.2-.3.3-.7.2-1-.1-.5-1.3-3.2-1.6-3.8-.2-.3-.4-.4-.7-.5h-1.1c-.2 0-.4.1-.6.1l-.1.1c-.2.1-.4.3-.6.4-.2.2-.3.4-.5.6-.7.9-1.1 2-1.1 3.1 0 .8.2 1.6.5 2.3l.1.3c.9 1.9 2.1 3.6 3.7 5.1l.4.4c.3.3.6.5.8.8 2.1 1.8 4.5 3.1 7.2 3.8.3.1.7.1 1 .2h1c.5 0 1.1-.2 1.5-.4.3-.2.5-.2.7-.4l.2-.2c.2-.2.4-.3.6-.5s.4-.4.5-.6c.2-.4.3-.9.4-1.4v-.7s-.1-.1-.3-.2z"></path></svg>    
+                <svg class="whatsapp-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 39 39">
+                    <path class="path-1 svg-elem-1" fill="#fff"
+                        d="M10.7 32.8l.6.3c2.5 1.5 5.3 2.2 8.1 2.2 8.8 0 16-7.2 16-16 0-4.2-1.7-8.3-4.7-11.3s-7-4.7-11.3-4.7c-8.8 0-16 7.2-15.9 16.1 0 3 .9 5.9 2.4 8.4l.4.6-1.6 5.9 6-1.5z">
+                    </path>
+                    <path class="path-2 svg-elem-2" fill="#FFF"
+                        d="M32.4 6.4C29 2.9 24.3 1 19.5 1 9.3 1 1.1 9.3 1.2 19.4c0 3.2.9 6.3 2.4 9.1L1 38l9.7-2.5c2.7 1.5 5.7 2.2 8.7 2.2 10.1 0 18.3-8.3 18.3-18.4 0-4.9-1.9-9.5-5.3-12.9zM19.5 34.6c-2.7 0-5.4-.7-7.7-2.1l-.6-.3-5.8 1.5L6.9 28l-.4-.6c-4.4-7.1-2.3-16.5 4.9-20.9s16.5-2.3 20.9 4.9 2.3 16.5-4.9 20.9c-2.3 1.5-5.1 2.3-7.9 2.3zm8.8-11.1l-1.1-.5s-1.6-.7-2.6-1.2c-.1 0-.2-.1-.3-.1-.3 0-.5.1-.7.2 0 0-.1.1-1.5 1.7-.1.2-.3.3-.5.3h-.1c-.1 0-.3-.1-.4-.2l-.5-.2c-1.1-.5-2.1-1.1-2.9-1.9-.2-.2-.5-.4-.7-.6-.7-.7-1.4-1.5-1.9-2.4l-.1-.2c-.1-.1-.1-.2-.2-.4 0-.2 0-.4.1-.5 0 0 .4-.5.7-.8.2-.2.3-.5.5-.7.2-.3.3-.7.2-1-.1-.5-1.3-3.2-1.6-3.8-.2-.3-.4-.4-.7-.5h-1.1c-.2 0-.4.1-.6.1l-.1.1c-.2.1-.4.3-.6.4-.2.2-.3.4-.5.6-.7.9-1.1 2-1.1 3.1 0 .8.2 1.6.5 2.3l.1.3c.9 1.9 2.1 3.6 3.7 5.1l.4.4c.3.3.6.5.8.8 2.1 1.8 4.5 3.1 7.2 3.8.3.1.7.1 1 .2h1c.5 0 1.1-.2 1.5-.4.3-.2.5-.2.7-.4l.2-.2c.2-.2.4-.3.6-.5s.4-.4.5-.6c.2-.4.3-.9.4-1.4v-.7s-.1-.1-.3-.2z">
+                    </path>
+                </svg>
             </div>
             <div class="brand-name">
-            <h2>WhatsApp Clone</h2>
+                <h2>WhatsApp Clone</h2>
             </div>
             <div class="encrytion-ey">
-            <span class="lock"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
-                <path d="M18,21H6c-0.6,0-1-0.4-1-1V10c0-0.6,0.4-1,1-1h12c0.6,0,1,0.4,1,1v10C19,20.6,18.6,21,18,21z" opacity=".3"></path><path d="M14 15c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2S14 13.9 14 15zM18 9h-2V7c0-2.2-1.8-4-4-4C9.8 3 8 4.8 8 7v2H6V7c0-3.4 2.6-6 6-6 3.4 0 6 2.6 6 6V9z"></path><path d="M18,22H6c-1.1,0-2-0.9-2-2V10c0-1.1,0.9-2,2-2h12c1.1,0,2,0.9,2,2v10C20,21.1,19.1,22,18,22z M6,10v10h12l0-10H6z"></path>
-                </svg></span><p>End-to-end encrypted</p>
+                <span class="lock"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M18,21H6c-0.6,0-1-0.4-1-1V10c0-0.6,0.4-1,1-1h12c0.6,0,1,0.4,1,1v10C19,20.6,18.6,21,18,21z"
+                            opacity=".3"></path>
+                        <path
+                            d="M14 15c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2S14 13.9 14 15zM18 9h-2V7c0-2.2-1.8-4-4-4C9.8 3 8 4.8 8 7v2H6V7c0-3.4 2.6-6 6-6 3.4 0 6 2.6 6 6V9z">
+                        </path>
+                        <path
+                            d="M18,22H6c-1.1,0-2-0.9-2-2V10c0-1.1,0.9-2,2-2h12c1.1,0,2,0.9,2,2v10C20,21.1,19.1,22,18,22z M6,10v10h12l0-10H6z">
+                        </path>
+                    </svg></span>
+                <p>End-to-end encrypted</p>
             </div>
             <div class="loader-progress-bar progress-color">
             </div>
         </div>
     </div>
-<div class="full-wdt-header"><div class="login">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <div id="g_id_onload"
-    data-client_id="901790561207-kbni41il6e8e96518plt982icg663d1t.apps.googleusercontent.com"
-    data-callback="handleCredentialResponse">
-</div><div id="sign-in" class="g-signin2" data-onsuccess="onSignIn"></div><div class="sign-out"><a href="#" onclick="signOut();">Sign out</a></div></div></div>
-<div class="container">
-    <div class="wrapper">
-    <main class="parent_container">
-    <div class="col-1">
-   <header class="header-main">
-    <nav class="nav_bar">
-        <div class="profile-icon">
-            <img  class="profile-image" src="https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250" alt="">
-        </div>
-        <ul class="list-menu">
-            <li class="list-items"><i class="fa-solid fa-user-group"></i></li>
-            <li class="list-items"><?xml version="1.0" ?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M15 3.51212C17.5687 4.42004 19.6022 6.461 20.5 9.03451M11 3.05493C6.50005 3.55238 3 7.36745 3 12C3 13.7711 3.51156 15.4226 4.39499 16.815L3 21L7.18497 19.605C8.57736 20.4884 10.2289 21 12 21C16.6326 21 20.4476 17.5 20.9451 13" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M12 17C9.23858 17 7 14.7614 7 12M8.99951 8C9.83526 7.37209 10.8742 7 12 7C14.7614 7 17 9.23858 17 12C17 13.1258 16.6279 14.1647 16 15.0005" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="12" cy="12" r="1" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></li>
-            <li class="list-items"><?xml version="1.0" ?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M17.7501 3C19.4831 3 20.8993 4.35645 20.995 6.06558L21.0001 6.25V17.75C21.0001 19.483 19.6436 20.8992 17.9345 20.9949L17.7501 21H6.2501C4.51707 21 3.10086 19.6435 3.00525 17.9344L3.0001 17.75L2.99981 9.37208C3.23448 9.45505 3.48702 9.5002 3.7501 9.5002C4.01315 9.5002 4.26566 9.45506 4.50031 9.37211L4.5001 17.75C4.5001 18.6682 5.20721 19.4212 6.10657 19.4942L6.2501 19.5H17.7501C18.6683 19.5 19.4213 18.7929 19.4943 17.8935L19.5001 17.75V6.25C19.5001 5.33183 18.793 4.57881 17.8936 4.5058L17.7501 4.5H6.2501C5.64992 4.5 5.12031 4.80213 4.80507 5.2626C4.49114 5.095 4.13172 5 3.7501 5C3.56887 5 3.39265 5.02142 3.22383 5.06188C3.67711 3.90899 4.77007 3.07762 6.06568 3.00514L6.2501 3H17.7501ZM13.2461 13.0031C13.6603 13.0031 13.9961 13.3388 13.9961 13.7531C13.9961 14.1327 13.714 14.4465 13.3479 14.4962L13.2461 14.5031H8.74786C8.33365 14.5031 7.99786 14.1673 7.99786 13.7531C7.99786 13.3734 8.28002 13.0596 8.64609 13.0099L8.74786 13.0031H13.2461ZM15.2523 9.49623C15.6666 9.49623 16.0023 9.83201 16.0023 10.2462C16.0023 10.6259 15.7202 10.9397 15.3541 10.9894L15.2523 10.9962H8.74786C8.33365 10.9962 7.99786 10.6604 7.99786 10.2462C7.99786 9.86653 8.28002 9.55274 8.64609 9.50307L8.74786 9.49623H15.2523ZM3.7501 6C4.44051 6 5.0002 6.55969 5.0002 7.2501C5.0002 7.94051 4.44051 8.5002 3.7501 8.5002C3.05969 8.5002 2.5 7.94051 2.5 7.2501C2.5 6.55969 3.05969 6 3.7501 6Z" fill="#a5b1bb"/></svg></li>
-            <li class="list-items"><?xml version="1.0" ?><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g id="Consultation"><path d="M365.7891,233.274V114.45a29.5014,29.5014,0,0,0-29.502-29.502H85.502A29.502,29.502,0,0,0,56,114.45V275.6685a29.5,29.5,0,0,0,29.501,29.502h38.0107V349.938a10.3288,10.3288,0,0,0,17.6328,7.3028l52.07-52.07h47.7618v-29.709A42.2343,42.2343,0,0,1,283.168,233.274Zm-87.8438-21.8477a7.3,7.3,0,0,1-7.2988,7.2989H234.5586v36.0859a7.2984,7.2984,0,0,1-7.2979,7.2988H194.5273a7.2986,7.2986,0,0,1-7.2988-7.2988V218.7252H151.1406a7.3,7.3,0,0,1-7.2978-7.2989V178.692a7.3,7.3,0,0,1,7.2978-7.2989h36.0879V135.3072a7.2985,7.2985,0,0,1,7.2988-7.2988h32.7334a7.2983,7.2983,0,0,1,7.2979,7.2988v36.0859h36.0879a7.3,7.3,0,0,1,7.2988,7.2989Z"/><path d="M437.8066,257.272H283.167a18.1914,18.1914,0,0,0-18.1914,18.1914v99.41A18.1922,18.1922,0,0,0,283.168,393.065h88.2207l32.1084,32.1094a6.3689,6.3689,0,0,0,10.872-4.5039V393.065h23.44A18.1909,18.1909,0,0,0,456,374.8755V275.4634A18.1924,18.1924,0,0,0,437.8066,257.272ZM411.4219,361.0025H309.2207a12,12,0,0,1,0-24H411.4219a12,12,0,0,1,0,24Zm0-48H309.2207a12,12,0,0,1,0-24H411.4219a12,12,0,0,1,0,24Z"/></g></svg></li>
-            <li class="list-items"><?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><circle cx="128" cy="128" r="12"/><circle cx="128" cy="64" r="12"/><circle cx="128" cy="192" r="12"/></svg></li>
-        </ul>
-    </nav>
-   </header>
-  <section>
-    <div class="chat-side-bar">
-        <div class="chat-search-container">
-            <div class="search-form-wrapper">
-            <form action="#">
-                <input style="font-size: 14px;" type="text" placeholder="⌕      Search or Start new chat" name="search">
-              </form>
-            </div>
-              <div class="filter-container">
-                <i id="filter-search"class="fa-solid fa-filter"></i>
-              </div>
-        </div>
-        <div class="chat-list">
-            <!-- <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMwNjgzNDh8&ixlib=rb-4.0.3&q=85" alt="">
+    <!-- APP content -->
+    <div class="full-wdt-header">
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <main class="parent_container">
+                <!-- Left Side column -->
+                <div class="col-1">
+                    <header class="header-main">
+                        <nav class="nav_bar">
+                            <div class="profile-icon">
+                                <img class="profile-image"
+                                    src="https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250" alt="">
+                            </div>
+                            <ul class="list-menu">
+                                <li class="list-items"><i class="fa-solid fa-user-group"></i></li>
+                                <li class="list-items">
+                                    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15 3.51212C17.5687 4.42004 19.6022 6.461 20.5 9.03451M11 3.05493C6.50005 3.55238 3 7.36745 3 12C3 13.7711 3.51156 15.4226 4.39499 16.815L3 21L7.18497 19.605C8.57736 20.4884 10.2289 21 12 21C16.6326 21 20.4476 17.5 20.9451 13"
+                                            stroke="black" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" />
+                                        <path
+                                            d="M12 17C9.23858 17 7 14.7614 7 12M8.99951 8C9.83526 7.37209 10.8742 7 12 7C14.7614 7 17 9.23858 17 12C17 13.1258 16.6279 14.1647 16 15.0005"
+                                            stroke="black" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" />
+                                        <circle cx="12" cy="12" r="1" stroke="black" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2" />
+                                    </svg>
+                                </li>
+                                <li class="list-items">
+                                    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.7501 3C19.4831 3 20.8993 4.35645 20.995 6.06558L21.0001 6.25V17.75C21.0001 19.483 19.6436 20.8992 17.9345 20.9949L17.7501 21H6.2501C4.51707 21 3.10086 19.6435 3.00525 17.9344L3.0001 17.75L2.99981 9.37208C3.23448 9.45505 3.48702 9.5002 3.7501 9.5002C4.01315 9.5002 4.26566 9.45506 4.50031 9.37211L4.5001 17.75C4.5001 18.6682 5.20721 19.4212 6.10657 19.4942L6.2501 19.5H17.7501C18.6683 19.5 19.4213 18.7929 19.4943 17.8935L19.5001 17.75V6.25C19.5001 5.33183 18.793 4.57881 17.8936 4.5058L17.7501 4.5H6.2501C5.64992 4.5 5.12031 4.80213 4.80507 5.2626C4.49114 5.095 4.13172 5 3.7501 5C3.56887 5 3.39265 5.02142 3.22383 5.06188C3.67711 3.90899 4.77007 3.07762 6.06568 3.00514L6.2501 3H17.7501ZM13.2461 13.0031C13.6603 13.0031 13.9961 13.3388 13.9961 13.7531C13.9961 14.1327 13.714 14.4465 13.3479 14.4962L13.2461 14.5031H8.74786C8.33365 14.5031 7.99786 14.1673 7.99786 13.7531C7.99786 13.3734 8.28002 13.0596 8.64609 13.0099L8.74786 13.0031H13.2461ZM15.2523 9.49623C15.6666 9.49623 16.0023 9.83201 16.0023 10.2462C16.0023 10.6259 15.7202 10.9397 15.3541 10.9894L15.2523 10.9962H8.74786C8.33365 10.9962 7.99786 10.6604 7.99786 10.2462C7.99786 9.86653 8.28002 9.55274 8.64609 9.50307L8.74786 9.49623H15.2523ZM3.7501 6C4.44051 6 5.0002 6.55969 5.0002 7.2501C5.0002 7.94051 4.44051 8.5002 3.7501 8.5002C3.05969 8.5002 2.5 7.94051 2.5 7.2501C2.5 6.55969 3.05969 6 3.7501 6Z"
+                                            fill="#a5b1bb" />
+                                    </svg>
+                                </li>
+                                <li class="list-items">
+                                    <?xml version="1.0" ?><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                        <title />
+                                        <g id="Consultation">
+                                            <path
+                                                d="M365.7891,233.274V114.45a29.5014,29.5014,0,0,0-29.502-29.502H85.502A29.502,29.502,0,0,0,56,114.45V275.6685a29.5,29.5,0,0,0,29.501,29.502h38.0107V349.938a10.3288,10.3288,0,0,0,17.6328,7.3028l52.07-52.07h47.7618v-29.709A42.2343,42.2343,0,0,1,283.168,233.274Zm-87.8438-21.8477a7.3,7.3,0,0,1-7.2988,7.2989H234.5586v36.0859a7.2984,7.2984,0,0,1-7.2979,7.2988H194.5273a7.2986,7.2986,0,0,1-7.2988-7.2988V218.7252H151.1406a7.3,7.3,0,0,1-7.2978-7.2989V178.692a7.3,7.3,0,0,1,7.2978-7.2989h36.0879V135.3072a7.2985,7.2985,0,0,1,7.2988-7.2988h32.7334a7.2983,7.2983,0,0,1,7.2979,7.2988v36.0859h36.0879a7.3,7.3,0,0,1,7.2988,7.2989Z" />
+                                            <path
+                                                d="M437.8066,257.272H283.167a18.1914,18.1914,0,0,0-18.1914,18.1914v99.41A18.1922,18.1922,0,0,0,283.168,393.065h88.2207l32.1084,32.1094a6.3689,6.3689,0,0,0,10.872-4.5039V393.065h23.44A18.1909,18.1909,0,0,0,456,374.8755V275.4634A18.1924,18.1924,0,0,0,437.8066,257.272ZM411.4219,361.0025H309.2207a12,12,0,0,1,0-24H411.4219a12,12,0,0,1,0,24Zm0-48H309.2207a12,12,0,0,1,0-24H411.4219a12,12,0,0,1,0,24Z" />
+                                        </g>
+                                    </svg>
+                                </li>
+                                <li class="list-items">
+                                    <?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                        <rect fill="none" height="256" width="256" />
+                                        <circle cx="128" cy="128" r="12" />
+                                        <circle cx="128" cy="64" r="12" />
+                                        <circle cx="128" cy="192" r="12" />
+                                    </svg>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <section>
+                        <div class="chat-side-bar">
+                            <div class="chat-search-container">
+                                <div class="search-form-wrapper">
+                                    <form action="#">
+                                        <input style="font-size: 14px;" type="text"
+                                            placeholder="⌕      Search or Start new chat" name="search">
+                                    </form>
+                                </div>
+                                <div class="filter-container">
+                                    <i id="filter-search" class="fa-solid fa-filter"></i>
+                                </div>
+                            </div>
+                            <div class="chat-list">
+                            </div>
+                        </div>
+                        <div class="install-banner"><img width="64" height="64"
+                                src="https://img.icons8.com/external-justicon-flat-justicon/64/external-whatsapp-social-media-justicon-flat-justicon.png"
+                                alt="external-whatsapp-social-media-justicon-flat-justicon" /><a
+                                href="https://www.whatsapp.com/download">Install the APP for Windows ></a></div>
+                    </section>
                 </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">Alexandra</div><div class="user-chat-time active-chat-msg">5:00pm</div>
+                <!-- Right Side column -->
+                <div class="col-2">
+                    <header class="header-main chat-header-position">
+                        <nav class="nav_bar justify-content-btw">
+                            <div class="profile-icon">
+                                <img id="user_profile" class="profile-image"
+                                    src="https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMwNjgzNDh8&ixlib=rb-4.0.3&q=85"
+                                    alt="">
+                                <div class="user-name"><span id="name-sender">Alexandra</span><br><span
+                                        class="last-seen">Last Seen today at 08:00am</span></div>
+                            </div>
+                            <ul class="list-menu">
+                                <li class="list-items"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        width="100" height="100" viewBox="0 0 50 50">
+                                        <path
+                                            d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z">
+                                        </path>
+                                    </svg></li>
+                                <li class="list-items">
+                                    <?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                        <rect fill="none" height="256" width="256" />
+                                        <circle cx="128" cy="128" r="12" />
+                                        <circle cx="128" cy="64" r="12" />
+                                        <circle cx="128" cy="192" r="12" />
+                                    </svg>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <section class="user-chat-window">
+                        <div class="user-chat chat-container">
+                            <div class="sender-message-bar message-bar">Hello<div class="name">Alexandra</div></div>
+                            <div class="sender-message-bar message-bar">Shekhar<div class="name">Alexandra</div></div>
+                            <div class="sender-message-bar message-bar">Have you done the work<div class="name">Alexandra</div></div>
+                            <div class="sender-message-bar message-bar">Any update?<div class="name">Alexandra</div></div>
+                            <div class="sender-message-bar message-bar">Shekhar ?<div class="name">Alexandra</div></div>
+                            <div class="sender-message-bar message-bar">No reply ?<div class="name">Alexandra</div></div>
+                            <div class="sender-message-bar message-bar">Are you there ?<div class="name">Alexandra</div>
+                            </div>
+                            <!-- This div is temporary -->
+                            <div class="dynamic-data"></div>
+                        
+                       
+                    </section>
+                    <div class="data-share-bar">
+                        <div class="toggle-menu">
+                            <div class="tool-tip">
+                                <div class="contact"><i class="fa-solid fa-user"></i></div>
+                                <div class="image"><i class="fa-solid fa-file-image"></i></div>
+                                <div class="document"><i class="fa-solid fa-file"></i></div>
+                                <div class="video"><i class="fa-solid fa-video"></i></div>
+                            </div>
+                            <button id="toggle-btn" class="toggle-plus-btn"><i
+                                    class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="message-type-bar">
+                            <input id="input_data" type="text">
+                        </div>
+                        <div class="send-button-container">
+                            <button onclick="submitMessage ()" id="submit-btn" type="submit"><i
+                                    class="fa-solid fa-paper-plane"></i></button>
+                        </div>
                     </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">Hii.. How are you ?</span></div><div class="bages">1</div></div>
                 </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">Rahul sharma</div><div class="user-chat-time active-chat-msg">8:00pm</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">Phone utha le bro..</span></div><div class="bages">3</div></div>
-                </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">Naresh tak</div><div class="user-chat-time active-chat-msg">12:00pm</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">Increment ho gya kya ?</span></div><div class="bages">1</div></div>
-                </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">Krishna khatri</div><div class="user-chat-time active-chat-msg">1:00am</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">Nice</span></div><div class="bages">2</div></div>
-                </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1615152829651-082a7f6c452d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMxNDk5NzF8&ixlib=rb-4.0.3&q=85" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">John doe</div><div class="user-chat-time active-chat-msg">6:00am</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">Nice pic.</span></div><div class="bages">1</div></div>
-                </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMxNDk5NzF8&ixlib=rb-4.0.3&q=85" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">Developer jack</div><div class="user-chat-time active-chat-msg">5:00pm</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">check the code..</span></div><div class="bages">8</div></div>
-                </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMxNTAwODF8&ixlib=rb-4.0.3&q=85" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">christina</div><div class="user-chat-time active-chat-msg">9:00am</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">Hi</span></div><div class="bages">1</div></div>
-                </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1595617795501-9661aafda72a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMxNTAxNzd8&ixlib=rb-4.0.3&q=85" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">jacky</div><div class="user-chat-time active-chat-msg">5:00pm</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender"></span><span class="sender-message">Take a pull first</span></div><div class="bages">2</div></div>
-                </div>
-                </div>
-               
-            </div>
-            <div class="chat-bar">
-                <div class="user-info">
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMxNTAyODN8&ixlib=rb-4.0.3&q=85" alt="">
-                </div>
-                <div class="chat-user-name-info">
-                    <div class="chat-user-id">
-                    <div class="user-name">Doctor Rohit</div><div class="user-chat-time inctive-chat-msg">10:00am</div>
-                    </div>
-                    <div class="chat-message"><div class="message-box"><span class="name-sender">Me:</span><span class="doubletick-active"><i class="fa-solid fa-check-double"></i></span><span class="sender-message">Hello sir!</span></div><div class="bages-unactive"></div></div>
-                </div>
-                </div>
-               
-            </div> -->
+            </main>
         </div>
     </div>
-    <div class="install-banner"><img width="64" height="64" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-whatsapp-social-media-justicon-flat-justicon.png" alt="external-whatsapp-social-media-justicon-flat-justicon"/><a href="https://www.whatsapp.com/download">Install the APP for Windows ></a></div>
-  </section>
-    </div>
-    <div class="col-2">
-        <header class="header-main chat-header-position">
-        <nav class="nav_bar justify-content-btw">   
-
-        <div class="profile-icon">
-                <img id="user_profile" class="profile-image" src="https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMwNjgzNDh8&ixlib=rb-4.0.3&q=85" alt="">
-                <div class="user-name"><span id="name-sender">Alexandra</span><br><span class="last-seen">Last Seen today at 08:00am</span></div>
-        </div>
-            <ul class="list-menu">
-                <li class="list-items"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-                    <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
-                    </svg></li>
-                <li class="list-items"><?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><circle cx="128" cy="128" r="12"/><circle cx="128" cy="64" r="12"/><circle cx="128" cy="192" r="12"/></svg></li>
-            </ul>
-        </nav>
-        </header>
-        <section class="user-chat-window">
-            <div class="user-chat chat-container">
-                <div class="sender-message-bar message-bar">Hello<div class="name">Alexandra</div></div>
-                   <!-- This div is temporary -->
-                   <div class="dynamic-data"></div>
-                   <!-- This div is temporary -->
-                <!-- <div class="sender-message-bar message-bar">Have check the CSS code of your last project, its required more practice to write a clean code</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="reciver-message-bar message-bar">Yes, thankypu for reviewing my code, i will improve it</div><span class="reciver-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar"><img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMxNTc5NTZ8&ixlib=rb-4.0.3&q=85" alt=""></div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="reciver-message-bar message-bar">Okay i will copy that code</div><span class="reciver-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="reciver-message-bar message-bar">👍</div><span class="reciver-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="reciver-message-bar message-bar">Bye take care</div><span class="reciver-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span>
-                <div class="sender-message-bar message-bar">😀</div><span class="sender-chat-arrow"><i class="fa-solid fa-play"></i></span> -->
-            </div>
-            <div class="data-share-bar">
-                <div class="toggle-menu">
-                    <div class="tool-tip"><div class="contact"><i class="fa-solid fa-user"></i></div><div class="image"><i class="fa-solid fa-file-image"></i></div><div class="document"><i class="fa-solid fa-file"></i></div><div class="video"><i class="fa-solid fa-video"></i></div></div>
-                   <button id="toggle-btn" class="toggle-plus-btn"><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="message-type-bar">
-                    <input  id="input_data" type="text">
-                </div>
-                <div class="send-button-container">
-                    <button  onclick="submitMessage ()" id="submit-btn"  type="submit"><i class="fa-solid fa-paper-plane"></i></button>
-                </div>
-            </div>
-        </section>
-    </div>
-    </main>
-</div>
-</div>
-<!-- <script type="module">
-
-    // Import the functions you need from the SDKs you need
-  
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-
-  
-    const firebaseConfig = {
-  
-      apiKey: "AIzaSyBy02Nbi5Py3pLZQ8s5T9VFMVdqtM5sRys",
-  
-      authDomain: "whatsapp-clone-login-409608.firebaseapp.com",
-  
-      projectId: "whatsapp-clone-login-409608",
-  
-      storageBucket: "whatsapp-clone-login-409608.appspot.com",
-  
-      messagingSenderId: "901790561207",
-  
-      appId: "1:901790561207:web:677d14914e38037d5a6e32",
-  
-      measurementId: "G-RJYB8ZHWGB"
-  
-    };
-  
-  
-    // Initialize Firebase
-  
-    const app = initializeApp(firebaseConfig);
-  
-    const analytics = getAnalytics(app);
-  
-  </script> -->
+    
 </body>
+
 </html>
