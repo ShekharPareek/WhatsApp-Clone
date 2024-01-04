@@ -580,7 +580,7 @@ body{
     text-transform: lowercase;
 }
 .user-chat {
-  display: flex;
+  display: none;
   background-image: url(https://i.pinimg.com/736x/5a/11/bb/5a11bb1d77ee734b4f16ad3b2d6bc189.jpg
   );
   background-size: contain;
@@ -759,23 +759,29 @@ button.toggle-plus-btn {
 
 .tool-tip {
   position: absolute;
-    left: 7%;
-    bottom: 81%;
+    left: 5%;
+    bottom: 10%;
     padding: 6px 12px 5px 14px;
     margin-bottom: 12px;
     border-radius: 10px 10px 0 0;
     background-color: #101920;
     cursor: pointer;
     display: none;
-    z-index: -1;
     width: 145px;
     height: 147px;
-    font-size:21px;
+    font-size: 14px;
     border: 0.25px solid #353e45;
     border-bottom: none;
 }
+.tool-tip.show div i {
+  font-size: 22px!important;
+  margin-right: 9px;
+}
 .show{
-  display:block;
+  display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 10px;
 }
 /* for rotate icons */
 .rotate-icon{

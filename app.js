@@ -56,15 +56,19 @@ function submitMessage () {
     document.getElementById("input_data").value = "";
 
     let htmlContent = "";
-    const Chat = document.querySelector(".dynamic-data");
+    let chatContainer = document.querySelector(".chat-container");
+
     for(let i = 0; i < userChat.length; i++){
         const Element = userChat[i];
 
-        htmlContent += `<div class="reciver-message-bar message-bar">${Element.recivermessage}<div class="name">${Element.recivername}</div></div>`;
+        htmlContent = `<div class="reciver-message-bar message-bar">${Element.recivermessage}<div class="name">${Element.recivername}</div></div>`;
     }
 
-    if(Chat){
-        Chat.innerHTML = htmlContent;
+    if(chatContainer){
+        let = dynamicData = document.createElement("div");
+        dynamicData.classList.add("dynamic-data");
+        dynamicData.innerHTML = htmlContent;
+        chatContainer.appendChild(dynamicData);
         console.log(Element);
     }
     else{
@@ -79,8 +83,8 @@ function submitMessage () {
 };
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
+
 
 // for main-into-page
 let container = document.querySelector(".main-loader-container");
@@ -98,7 +102,7 @@ setTimeout(() => {
             const item = userProfile[i];
             chatbarContent += `
             <div class="chat-bar">
-            <div id="${item.id}" class="user-info">
+            <div id="${item.username}" class="user-info">
                 <div class="profile-image">
                     <img src="${item.profileimg}" alt="">
                 </div>
@@ -143,8 +147,56 @@ setTimeout(() => {
     });
 
 
+
+
+    // Upload profile Image & send Image data through send
+
+// document.querySelector('.img-input').addEventListener('change', function() {
+//     if (this.files && this.files[0]) {
+//         var img = document.querySelector('.profile-image');
+//         img.onload = () => {
+//             URL.revokeObjectURL(img.src);  // no longer needed, free memory
+//         }
+
+//         img.src = URL.createObjectURL(this.files[0]);
+//     }
+// });
+
+// Tab change of user Chat with it profile.
+
+function tabChange(){
+    let firstChat = document.querySelector(".user-chat:nth-of-type(1)");
+    let leftChatcol = document.querySelector(".chat-left-col:nth-of-type(1)");
+      firstChat.style.display= "flex";
+      
+      document.querySelectorAll('.user-info').forEach(function (element) {
+    element.addEventListener("click",function(event){
+        let target = this.id;
+        console.log(target);
+        document.querySelectorAll('.user-chat').forEach(function (section) {
+            section.style.display = 'none';
+        });
+        document.querySelector('[data-section="' + target + '"]').style.display = 'flex';
+    });
+});
+leftChatcol.style.display = "block";
+ document.querySelectorAll(".list-items").forEach(function(item){
+item.addEventListener("click",function(event){
+ let element = this.id;
+ console.log(element);
+ document.querySelectorAll(".chat-left-col").forEach(function(listview){
+    listview.style.display="none";
+ });
+ document.querySelector('[data-item="' + target + '"]').style.display = 'block';
 });
 
+
+ });
+}
+
+tabChange();
+
+});
 
 
 
