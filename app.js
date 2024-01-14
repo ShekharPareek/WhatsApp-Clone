@@ -7,7 +7,8 @@ const userProfile = [
         "lastseen": "06:00AM",
         "sender":"Alexgendra",
         "lastmessage": "Hii.. how are you?",
-        "profileimg": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMwNjgzNDh8&ixlib=rb-4.0.3&q=85"
+        "profileimg": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMwNjgzNDh8&ixlib=rb-4.0.3&q=85",
+        "bageCount":"1"
     },
     {
         "id": 2,
@@ -15,7 +16,7 @@ const userProfile = [
         "lastseen": "8:00PM",
         "sender":"Me",
         "lastmessage": "Phone utha le bro..",
-        "profileimg": "https://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg"
+        "profileimg": "https://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg",
     },
     {
         "id": 3,
@@ -23,7 +24,8 @@ const userProfile = [
         "lastseen": "11:00PM",
         "sender":"Naresh Tak",
         "lastmessage": "Increment ho gya kya bhai ?",
-        "profileimg": "https://sintranet.sunarctechnologies.com/web/image?model=hr.employee.public&id=424&field=avatar_128&unique=1703664966000"
+        "profileimg": "c:\Users\Win10pro\Downloads\pexels-jack-winbow-1559486.jpg",
+        "bageCount":"2"
     },
     {
         "id": 4,
@@ -116,12 +118,15 @@ setTimeout(() => {
                             <span class="name-sender">${item.sender}:</span>
                             <span class="sender-message">${item.lastmessage}</span>
                         </div>
+                        <div class="bages">${item.bageCount}</div>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
     `
+
         };
+
     
         const chatListElement = document.querySelector(".chat-list");
         if (chatListElement) {
@@ -136,8 +141,9 @@ setTimeout(() => {
     fetchData();
 
 
+// Filter chat name is not working hear so put in the internal Script
 
-    // Toggle button tooltip for data send
+  // Toggle button tooltip for data send
     const toggleButton = document.getElementById("toggle-btn");
     toggleButton.addEventListener("click",function(){
     let toolTip = document.querySelector(".tool-tip");
@@ -165,37 +171,52 @@ setTimeout(() => {
 // Tab change of user Chat with it profile.
 
 function tabChange(){
-    let firstChat = document.querySelector(".user-chat:nth-of-type(1)");
-    let leftChatcol = document.querySelector(".chat-left-col:nth-of-type(1)");
-      firstChat.style.display= "flex";
+    let firstactiveTab = document.querySelector(".user-chat:nth-of-type(1)");
+    firstactiveTab.style.display= "flex";
+
+    let firstprofileactive = document.querySelector(".active-profile");
+    firstprofileactive.style.display ="flex";
       
       document.querySelectorAll('.user-info').forEach(function (element) {
     element.addEventListener("click",function(event){
         let target = this.id;
         console.log(target);
+        document.querySelectorAll('.user-info').forEach(function(link) {
+           
+        });
+       
         document.querySelectorAll('.user-chat').forEach(function (section) {
             section.style.display = 'none';
         });
+        document.querySelectorAll(".profile-icon").forEach(function(section){
+            section.style.display = 'none';
+        });
         document.querySelector('[data-section="' + target + '"]').style.display = 'flex';
+        document.querySelector('[data-image="' + target + '"]').style.display = 'flex';
     });
 });
-leftChatcol.style.display = "block";
- document.querySelectorAll(".list-items").forEach(function(item){
-item.addEventListener("click",function(event){
- let element = this.id;
- console.log(element);
- document.querySelectorAll(".chat-left-col").forEach(function(listview){
-    listview.style.display="none";
- });
- document.querySelector('[data-item="' + target + '"]').style.display = 'block';
-});
 
-
- });
 }
 
 tabChange();
 
+});
+
+
+
+
+
+ // Code for bages count is found undefined 
+ document.addEventListener("DOMContentLoaded", function() {
+    let bagesUndefined = document.querySelectorAll(".bages");
+
+    bagesUndefined.forEach(item => {
+        if (item.textContent.trim() === "undefined") {
+            item.style.display = 'none';
+        } else {
+            item.style.display = "block";
+        }
+    });
 });
 
 

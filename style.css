@@ -229,7 +229,7 @@ body{
 
   .profile-icon {
     width: auto;
-    display: flex;
+    display: none;
     cursor: pointer;
     align-items: center;
     gap: 15px;
@@ -464,10 +464,8 @@ body{
   justify-content: space-between;
 
 }
-  .chat-search-container>form{
-    width: 100%;
-  }
-  .chat-search-container form input{
+
+  .chat-search-container input{
     padding: 10px;
     width: 100%;
     border-radius: 10px;
@@ -475,7 +473,7 @@ body{
     background: #1d2a34;
     color: #a5b1bb;
   }
-  .chat-search-container>form input:focus{
+  .chat-search-container> input:focus{
     background-color:#1d2a34;
     border:none;      
   }
@@ -516,6 +514,7 @@ body{
     align-items: center;
     color: white;
     padding-right: 15px;
+    background-color: none;
   }
   
 
@@ -853,4 +852,8 @@ button.toggle-plus-btn {
       .wrapper {
           width: 3810px;
       }
+  }
+
+  .active-tab{
+    display: block;
   }
