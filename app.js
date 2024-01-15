@@ -200,6 +200,21 @@ function tabChange(){
 
 tabChange();
 
+
+let dropdownBtn = document.querySelector(".drop-down-list");
+let dropdown = document.querySelector(".drop-down");
+
+dropdownBtn.addEventListener("click", function () {
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+        dropdownBtn.classList.remove("active-li-top");
+    } else {
+        dropdown.style.display = "block";
+        dropdownBtn.classList.add("active-li-top");
+    }
+});
+
+
 });
 
 

@@ -226,6 +226,15 @@ body{
     display: none;
     margin-top: -100px;
   }
+  .Sa-userprofile img{
+    height: 47px;
+  width: 47px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+
+
 
   .profile-icon {
     width: auto;
@@ -259,6 +268,7 @@ body{
   align-items: center;
   gap: 22px;
   cursor: pointer;
+  padding: 5px;
   }
 
   .list-items>svg{
@@ -857,3 +867,37 @@ button.toggle-plus-btn {
   .active-tab{
     display: block;
   }
+
+  .drop-down-list{
+    position: relative;
+  }
+
+  .drop-down {
+    position: absolute;
+    right: -5px;
+    z-index: 9999999;
+    background-color: #1d2a34;
+    padding: 15px 0px 15px 0px;
+    border-radius: 8px;
+    top: 44px;
+    display: none;
+    transition: display 0.6s ease-in-out;
+    box-shadow: 0px 7px 33px 0px rgba(0,0,0,0.2);
+    list-style-type: none;
+  }
+  .drop-down>li{
+    padding: 12px 116px 12px 20px;
+  transition: background-color 0.6s ease;
+  display: block;
+  max-width: 300px;
+  font-size: 14px;
+  min-width: 261px;
+  }
+  .drop-down > li:hover{
+    background-color: #101920;
+}
+.active-li-top{
+  border-radius: 100%;
+  background-color: #101920;
+  box-shadow: 0px 7px 33px 0px rgba(0,0,0,0.2);
+}
