@@ -237,3 +237,23 @@ dropdownBtn.addEventListener("click", function () {
 
 
 
+// Tab change of top nav bar
+
+
+function topNavtab(){
+    let firstactiveTab = document.querySelector(".users-list-view");
+    firstactiveTab.style.display= "block";
+      
+      document.querySelectorAll('.list-menu').forEach(function (element) {
+    element.addEventListener("click",function(event){
+        let target = this.id;
+        console.log(target);
+        document.querySelectorAll('.left-side-whatsappcontent').forEach(function (section) {
+            section.style.display = 'none';
+        });
+        document.querySelector('[data-attr="' + target + '"]').style.display = 'block';
+    });
+});
+
+}
+topNavtab();
