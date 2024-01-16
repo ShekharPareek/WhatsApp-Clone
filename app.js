@@ -1,5 +1,3 @@
-
-
 const userProfile = [
     {
         "id": 1,
@@ -24,7 +22,7 @@ const userProfile = [
         "lastseen": "11:00PM",
         "sender":"Naresh Tak",
         "lastmessage": "Increment ho gya kya bhai ?",
-        "profileimg": "c:\Users\Win10pro\Downloads\pexels-jack-winbow-1559486.jpg",
+        "profileimg": "src\pexels-jack-winbow-1559486.jpg",
         "bageCount":"2"
     },
     {
@@ -200,7 +198,7 @@ function tabChange(){
 
 tabChange();
 
-
+// Dropd-down col-1
 let dropdownBtn = document.querySelector(".drop-down-list");
 let dropdown = document.querySelector(".drop-down");
 
@@ -210,10 +208,31 @@ dropdownBtn.addEventListener("click", function () {
         dropdownBtn.classList.remove("active-li-top");
     } else {
         dropdown.style.display = "block";
+
+
+
+
+
+
+        
         dropdownBtn.classList.add("active-li-top");
     }
 });
 
+// Drop-down col-2
+
+let dropdownbtn = document.querySelector(".dropdownBtn2");
+let dropdownright = document.querySelector(".drop-downcol-2");
+
+dropdownbtn.addEventListener("click", function () {
+    if (dropdownright.style.display === "block") {
+        dropdownright.style.display = "none";
+        dropdownbtn.classList.remove("active-li-top");
+    } else {
+        dropdownright.style.display = "block";
+        dropdownbtn.classList.add("active-li-top");
+    }
+});
 
 });
 
@@ -232,23 +251,30 @@ dropdownBtn.addEventListener("click", function () {
             item.style.display = "block";
         }
     });
-});
 
 
 
 
-// Tab change of top nav bar
+    // Tab change of top nav bar
 
 
 function topNavtab(){
-    let firstactiveTab = document.querySelector(".users-list-view");
+    // Initall acive First child of tab and its content
+     let tabchildFirst = document.querySelector('.tabs-container>li:nth-of-type(3)');
+     tabchildFirst.classList.add("active-li-top");
+    //  tab content 1st child
+    let firstactiveTab = document.querySelector(".left-side-whatsappcontent>div:nth-of-type(1)");
     firstactiveTab.style.display= "block";
       
-      document.querySelectorAll('.list-menu').forEach(function (element) {
+      document.querySelectorAll('.tabs-container>li').forEach(function (element) {
     element.addEventListener("click",function(event){
         let target = this.id;
         console.log(target);
-        document.querySelectorAll('.left-side-whatsappcontent').forEach(function (section) {
+        document.querySelectorAll('.tabs-container>li').forEach(function (tab){
+            tab.classList.remove("active-li-top");
+        }); 
+                     this.classList.add("active-li-top");
+        document.querySelectorAll('.left-side-whatsappcontent>div').forEach(function (section) {
             section.style.display = 'none';
         });
         document.querySelector('[data-attr="' + target + '"]').style.display = 'block';
@@ -257,3 +283,59 @@ function topNavtab(){
 
 }
 topNavtab();
+
+
+// Code for back from the active tab content
+
+let backIcon = document.querySelector(".back-btn");
+backIcon.addEventListener("click",function(){
+
+    let tabchildFirst = document.querySelector('.tabs-container>li:nth-of-type(3)');
+    tabchildFirst.classList.add("active-li-top");
+
+
+    // Remove another childs
+ let sibblingTabs = document.querySelectorAll(".left-side-whatsappcontent>div");
+ sibblingTabs.forEach(function(childTab){
+ childTab.style.display= "none";
+ });
+
+//  remove active tab class ?
+
+console.log(this);
+
+     //  tab content 1st child
+     let firstactiveTab = document.querySelector(".left-side-whatsappcontent>div:nth-of-type(1)");
+     firstactiveTab.style.display= "block";
+
+});
+
+
+
+
+// Search filter for chat Message
+
+let chatsearchBtn = document.querySelector(".search-chat-btn li:nth-of-type(1)");
+
+chatsearchBtn.addEventListener("click",function(){
+    console.log("clicked");
+  let searchBar = document.querySelector(".search-bar input");
+  searchBar.style.display ="block";
+  chatsearchBtn.classList.add("active-li-top");
+});
+
+// dropdown right three dot icon
+
+// let threedotrightIcon = document.querySelector(".threedot-rightIcon");
+// threedotrightIcon.addEventListener("click",function(){
+//     threedotrightIcon.classList.add("active-li-top")
+//   let dropdownRight = document.querySelector(".drop-downcol-2");
+//   dropdownRight.style.display = "block";
+// });
+
+});
+
+
+
+
+

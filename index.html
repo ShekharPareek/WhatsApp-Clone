@@ -39,30 +39,7 @@
 
 <body>
 
- <script>
-    //filter funtionality
-let filterBtn = document.querySelector(".filter-container");
-
-function FilterMessage(){
- let bagesUndefined = document.querySelectorAll(".bages");
-
-    bagesUndefined.forEach(item => {
-        if (item.textContent.trim() === "undefined") {
-            let chatBar = item.closest(".chat-bar");
-            if (chatBar) {
-                chatBar.remove();
-                console.log("found and removed");
-            }
-        } 
-   else {
-         document.querySelector(".chat-bar").style.display="block";
-         console.log("undefned not found");
-        }
-
-    });
-};
-
-</script>
+ 
 
     <!-- Welcome page and loader -->
     <div id="welcome-page" class="main-loader-container">
@@ -113,7 +90,8 @@ function FilterMessage(){
                             <div id="myImg" class="Sa-userprofile">
                                 <img class="profile-image" id="myImg" src="./src/pexels-jack-winbow-1559486.jpg">
                             </div>
-                            <ul class="list-menu">
+                            <div class="nav-list-left d-flex">
+                            <ul class="list-menu tabs-container">
                                 <li   id="group-content"class="list-items"><i class="fa-solid fa-user-group"></i></li>
                                 <li id="status" class="list-items">
                                     <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
@@ -149,24 +127,25 @@ function FilterMessage(){
                                         </g>
                                     </svg>
                                 </li>
-                                <li class="list-items drop-down-list">
-                                    <?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                                        <rect fill="none" height="256" width="256" />
-                                        <circle cx="128" cy="128" r="12" />
-                                        <circle cx="128" cy="64" r="12" />
-                                        <circle cx="128" cy="192" r="12" />
-                                    </svg>
-                                    <ul class="drop-down">
-                                    <li>New group</li>
-                                    <li>New community</li>
-                                    <li>Started message</li>
-                                    <li>Select chat</li>
-                                    <li>Settings</li>
-                                    <li>Log out</li>
-                                    <li>Get whatsapp for windows</li>
-                                    </ul>
-                                </li>
                             </ul>
+                            <div class="list-items drop-down-list">
+                                <?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="none" height="256" width="256" />
+                                    <circle cx="128" cy="128" r="12" />
+                                    <circle cx="128" cy="64" r="12" />
+                                    <circle cx="128" cy="192" r="12" />
+                                </svg>
+                                <ul class="drop-down">
+                                <li>New group</li>
+                                <li>New community</li>
+                                <li>Started message</li>
+                                <li>Select chat</li>
+                                <li>Settings</li>
+                                <li>Log out</li>
+                                <li>Get whatsapp for windows</li>
+                                </ul>
+                            </div>
+                        </div>
                         </nav>
                     </header>
                     <section>
@@ -200,10 +179,35 @@ function FilterMessage(){
 
                                     </script>
                                 </div>
-                                <div onClick="FilterMessage()"class="filter-container">
+                                <div onclick="FilterMessage()"class="filter-container">
                                     <i id="filter-search" class="fa-solid fa-filter"></i>
+                                    <script>
+                                        //filter funtionality
+                                    let filterBtn = document.querySelector(".filter-container");
+                                    
+                                    function FilterMessage(){
+                                        // Statically display show of filter message
+                                     document.querySelector(".filter-message").style.display="flex";
+                                     let bagesUndefined = document.querySelectorAll(".bages");
+                                    
+                                        bagesUndefined.forEach(item => {
+                                            if (item.textContent.trim() === "undefined") {
+                                                let chatBar = item.closest(".chat-bar");
+                                                if (chatBar) {
+                                                    chatBar.remove();
+                                                }
+                                            } 
+                                       else {
+                                             document.querySelector(".chat-bar").style.display="block";
+                                            }
+                                    
+                                        });
+                                    };
+                                    
+                                    </script>
                                 </div>
                             </div>
+                            <div class="filter-message green-banner-top"><div class="back-btn"><i class="fa-solid fa-x"></i></div>Unread message chat</div>
                             <div data-item="chats-listing" class="chat-list chat-left-col">
                             </div>
                             <!-- <div data-item="myImg"class="profile-change-tab chat-left-col">
@@ -211,7 +215,7 @@ function FilterMessage(){
                             </div> -->
                             </div>
                             <div data-attr="group-content"class="chat-group-content">
-                                <div class="green-banner-top"><div><i class="fa-solid fa-arrow-left"></i></div><div class="label">Communities</div></div>
+                                <div class="green-banner-top"><div class="back-btn"><i class="fa-solid fa-arrow-left"></i></div><div class="label">Communities</div></div>
                                     <div class="chat-bar">
                                         <div id="" class="user-info">
                                             <div class="profile-image">
@@ -244,7 +248,7 @@ function FilterMessage(){
                 </div>
                 <!-- Right Side column -->
                 <div class="col-2">
-                    <header class="header-main chat-header-position">
+                    <header class="header-main chat-header-position bordergray-bottom">
                         <nav class="nav_bar justify-content-btw">
                             <div class="profile-menu">
                                 <div data-image="Alexgendra" class="profile-icon active-profile">
@@ -275,20 +279,37 @@ function FilterMessage(){
                                             class="last-seen">Last Seen today at 04:00am</span></div>
                                 </div>
                             </div>
-                            <ul class="list-menu">
+                            <div class="search-bar">
+                                <input style="font-size: 14px;"  type="text" placeholder="Search chat message" name="search">
+                            </div>
+                            <ul class="list-menu search-chat-btn">
                                 <li class="list-items"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                         width="100" height="100" viewBox="0 0 50 50">
                                         <path
                                             d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z">
                                         </path>
                                     </svg></li>
-                                <li class="list-items">
+                                <li class="list-items dropdownBtn2 p-relative">
                                     <?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="none" height="256" width="256" />
                                         <circle cx="128" cy="128" r="12" />
                                         <circle cx="128" cy="64" r="12" />
                                         <circle cx="128" cy="192" r="12" />
                                     </svg>
+                                    <div class="drop-downcol-2">
+                                        <ul>
+                                            <li>Contact info</li>
+                                            <li>Selected message</li>
+                                            <li>Close chat</li>
+                                            <li>Mute notification</li>
+                                            <li>Disappering messages</li>
+                                            <li>Clear chat</li>
+                                            <li>Delete chat</li>
+                                            <li>Report</li>
+                                            <li>Block</li>
+
+                                        </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </nav>
