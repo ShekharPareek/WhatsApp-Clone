@@ -22,7 +22,7 @@ const userProfile = [
         "lastseen": "11:00PM",
         "sender":"Naresh Tak",
         "lastmessage": "Increment ho gya kya bhai ?",
-        "profileimg": "src\pexels-jack-winbow-1559486.jpg",
+        "profileimg": "C:\Users\Win10pro\Desktop\Bikaner Office Task\Whatsapp-Web-clone- UI\src\1943774.jpg",
         "bageCount":"2"
     },
     {
@@ -142,13 +142,17 @@ setTimeout(() => {
 // Filter chat name is not working hear so put in the internal Script
 
   // Toggle button tooltip for data send
-    const toggleButton = document.getElementById("toggle-btn");
-    toggleButton.addEventListener("click",function(){
-    let toolTip = document.querySelector(".tool-tip");
-    toggleButton.classList.toggle("rotate-icon");
-        toolTip.classList.toggle("show");
-
+    let toggleButton = document.querySelectorAll(".toggle-plus-btn");
+    toggleButton.forEach(function(toggleitem){
+         toggleitem.addEventListener("click",function(){
+            toggleitem.classList.toggle("rotate-icon");
+            let toolTip = document.querySelectorAll(".tool-tip");
+            toolTip.forEach(function(tooltipitem){
+                tooltipitem.classList.toggle("show");
+            });
+            });
     });
+    
 
 
 
@@ -169,8 +173,8 @@ setTimeout(() => {
 // Tab change of user Chat with it profile.
 
 function tabChange(){
-    let firstactiveTab = document.querySelector(".user-chat:nth-of-type(1)");
-    firstactiveTab.style.display= "flex";
+    let firstactiveTab = document.querySelector(".user-chat-window:nth-of-type(1)");
+    firstactiveTab.style.display= "block";
 
     let firstprofileactive = document.querySelector(".active-profile");
     firstprofileactive.style.display ="flex";
@@ -183,13 +187,13 @@ function tabChange(){
            
         });
        
-        document.querySelectorAll('.user-chat').forEach(function (section) {
+        document.querySelectorAll('.user-chat-window').forEach(function (section) {
             section.style.display = 'none';
         });
         document.querySelectorAll(".profile-icon").forEach(function(section){
             section.style.display = 'none';
         });
-        document.querySelector('[data-section="' + target + '"]').style.display = 'flex';
+        document.querySelector('[data-section="' + target + '"]').style.display = 'block';
         document.querySelector('[data-image="' + target + '"]').style.display = 'flex';
     });
 });
@@ -221,17 +225,26 @@ dropdownBtn.addEventListener("click", function () {
 
 // Drop-down col-2
 
-let dropdownbtn = document.querySelector(".dropdownBtn2");
-let dropdownright = document.querySelector(".drop-downcol-2");
+let dropdownbtn = document.querySelectorAll(".dropdownBtn2");
+let dropdownright = document.querySelectorAll(".drop-downcol-2");
 
-dropdownbtn.addEventListener("click", function () {
-    if (dropdownright.style.display === "block") {
-        dropdownright.style.display = "none";
-        dropdownbtn.classList.remove("active-li-top");
-    } else {
-        dropdownright.style.display = "block";
-        dropdownbtn.classList.add("active-li-top");
-    }
+dropdownbtn.forEach(function(button) {
+    button.addEventListener('click',dropDown2);
+ 
+
+ function dropDown2 () {
+
+    dropdownright.forEach(function(dropdowncontent){
+        if (dropdowncontent.style.display === "block") {
+            dropdowncontent.style.display = "none";
+            button.classList.remove("active-li-top");
+        } else {
+            dropdowncontent.style.display = "block";
+            button.classList.add("active-li-top");
+        }
+    });
+    
+};
 });
 
 });
@@ -285,34 +298,6 @@ function topNavtab(){
 topNavtab();
 
 
-// Code for back from the active tab content
-
-let backIcon = document.querySelector(".back-btn");
-backIcon.addEventListener("click",function(){
-
-    let tabchildFirst = document.querySelector('.tabs-container>li:nth-of-type(3)');
-    tabchildFirst.classList.add("active-li-top");
-
-
-    // Remove another childs
- let sibblingTabs = document.querySelectorAll(".left-side-whatsappcontent>div");
- sibblingTabs.forEach(function(childTab){
- childTab.style.display= "none";
- });
-
-//  remove active tab class ?
-
-console.log(this);
-
-     //  tab content 1st child
-     let firstactiveTab = document.querySelector(".left-side-whatsappcontent>div:nth-of-type(1)");
-     firstactiveTab.style.display= "block";
-
-});
-
-
-
-
 // Search filter for chat Message
 
 let chatsearchBtn = document.querySelector(".search-chat-btn li:nth-of-type(1)");
@@ -324,14 +309,20 @@ chatsearchBtn.addEventListener("click",function(){
   chatsearchBtn.classList.add("active-li-top");
 });
 
-// dropdown right three dot icon
 
-// let threedotrightIcon = document.querySelector(".threedot-rightIcon");
-// threedotrightIcon.addEventListener("click",function(){
-//     threedotrightIcon.classList.add("active-li-top")
-//   let dropdownRight = document.querySelector(".drop-downcol-2");
-//   dropdownRight.style.display = "block";
-// });
+
+// Close chat 
+
+let closeChatBtn = document.querySelectorAll(".close-chat");
+
+let chatcontent = document.querySelectorAll(".col2 section")
+closeChatBtn.addEventListener("click", function() {
+    console.log("Clicked close chat");
+    let chatCloseBanner = document.querySelector('section[data-section="chatclose"]');
+    chatCloseBanner.style.display = "block";
+    chatCloseBanner.nextElementSibling.style.display = "none";
+    
+});
 
 });
 

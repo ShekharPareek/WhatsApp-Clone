@@ -53,7 +53,7 @@ body{
   position: relative;
 }
 .bordergray-bottom{
-  border-bottom: 0.25px solid #a5b1bb;
+  border-top: 0.25px solid #a5b1bb;
 }
 .progress-color{
   animation: progressAnimationStrike 15s;
@@ -473,7 +473,7 @@ body{
     display: block;
     position: relative;
     background-color: #101920;
-    height: 100vh;
+    height:100vh;
   }
 
 .chat-search-container{
@@ -599,7 +599,6 @@ body{
     text-transform: lowercase;
 }
 .user-chat {
-  display: none;
   background-image: url(https://i.pinimg.com/736x/5a/11/bb/5a11bb1d77ee734b4f16ad3b2d6bc189.jpg
   );
   background-size: contain;
@@ -607,8 +606,8 @@ body{
   padding: 0px 80px 0 60px;
   margin-right: 0px;
   overflow-y: scroll;
-  height:100%;
-  
+  max-height: 90%;
+  min-height: 87%;
 }
 .message-bar{
   max-width: 40%;
@@ -659,10 +658,17 @@ body{
 }
 
 section.user-chat-window {
-  height:80%;
+  height:95%;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
+  display: none;
+}
+.data-share-bar{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 14px 7px 7px 7px!important;
 }
 
 button.toggle-plus-btn {
@@ -708,7 +714,6 @@ button.toggle-plus-btn {
     align-items: center;
     justify-content: space-evenly;
     padding: 10px;
-    height: 76px;
   }
 .toggle-menu {
   margin-right: 13px;
@@ -778,20 +783,20 @@ button.toggle-plus-btn {
 
 .tool-tip {
   position: absolute;
-    left: 5%;
-    bottom: 10%;
-    padding: 6px 12px 5px 14px;
-    margin-bottom: 12px;
-    border-radius: 10px 10px 0 0;
-    background-color: #101920;
-    cursor: pointer;
-    display: none;
-    width: 145px;
-    height: 147px;
-    font-size: 14px;
-    border: 0.25px solid #353e45;
-    border-bottom: none;
+  left: 2%;
+  bottom: 80%;
+  padding: 11px 12px 5px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px 10px 0 0;
+  background-color: #101920;
+  cursor: pointer;
+  display: none;
+  width: 195px;
+  font-size: 14px;
+  border: 0.25px solid #353e45;
+  border-bottom: none;
 }
+
 .tool-tip.show div i {
   font-size: 22px!important;
   margin-right: 9px;
@@ -977,4 +982,14 @@ display: none;
 }
 .drop-downcol-2 ul li:hover{
   background-color: #101920;
+}
+
+.closechat-background-image{
+  background-image: url("./src/native-desktop-hero_a22b846aefcd2de817624e95873b2064.png");
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40%;
+    margin: 0 auto;
 }
