@@ -170,7 +170,7 @@ setTimeout(() => {
 //     }
 // });
 
-// Tab change of user Chat with it profile.
+// Tab change of user Chat-message with it profile.
 
 function tabChange(){
     let firstactiveTab = document.querySelector(".user-chat-window:nth-of-type(1)");
@@ -273,7 +273,7 @@ dropdownbtn.forEach(function(button) {
 
 function topNavtab(){
     // Initall acive First child of tab and its content
-     let tabchildFirst = document.querySelector('.tabs-container>li:nth-of-type(3)');
+     let tabchildFirst = document.querySelector('.tabs-container>li:nth-of-type(4)');
      tabchildFirst.classList.add("active-li-top");
     //  tab content 1st child
     let firstactiveTab = document.querySelector(".left-side-whatsappcontent>div:nth-of-type(1)");
@@ -298,35 +298,44 @@ function topNavtab(){
 topNavtab();
 
 
-// Search filter for chat Message
+// Search filter for chat MessageS;
 
-let chatsearchBtn = document.querySelector(".search-chat-btn li:nth-of-type(1)");
+let chatsearchBtn = document.querySelectorAll(".search-chat-btn li:nth-of-type(1)");
+chatsearchBtn.forEach(function(btnitem){
+    btnitem.addEventListener("click",function(){
+  let searchBar = document.querySelectorAll(".search-bar input");
+  searchBar.forEach(function(items){
+    if(items.style.display === "none"){
+        items.style.display ="block";
+        btnitem.classList.add("active-li-top");
+    }
+    else{
+        items.style.display = "none";
+        btnitem.classList.remove("active-li-top");
+    }
+  });
 
-chatsearchBtn.addEventListener("click",function(){
-    console.log("clicked");
-  let searchBar = document.querySelector(".search-bar input");
-  searchBar.style.display ="block";
-  chatsearchBtn.classList.add("active-li-top");
+    });
 });
-
 
 
 // Close chat 
 
 let closeChatBtn = document.querySelectorAll(".close-chat");
-
-let chatcontent = document.querySelectorAll(".col2 section")
-closeChatBtn.addEventListener("click", function() {
-    console.log("Clicked close chat");
-    let chatCloseBanner = document.querySelector('section[data-section="chatclose"]');
-    chatCloseBanner.style.display = "block";
-    chatCloseBanner.nextElementSibling.style.display = "none";
-    
+closeChatBtn.forEach(function(closeitem){
+    closeitem.addEventListener("click", function() {
+        let chatCloseBanner = document.querySelectorAll('section[data-section="chatclose"]');
+        chatCloseBanner.forEach(function(chatcloseitems){
+            // Hide all sections
+            let sections = document.querySelectorAll(".sections");
+            sections.forEach(function(section){
+                section.style.display="none";
+            });
+            chatcloseitems.style.display = "block";
+        console.log("closed");
+        });
+        
+    });
 });
 
 });
-
-
-
-
-
