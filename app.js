@@ -152,10 +152,6 @@ setTimeout(() => {
             });
             });
     });
-    
-
-
-
 
     // Upload profile Image & send Image data through send
 
@@ -163,7 +159,7 @@ setTimeout(() => {
 //     if (this.files && this.files[0]) {
 //         var img = document.querySelector('.profile-image');
 //         img.onload = () => {
-//             URL.revokeObjectURL(img.src);  // no longer needed, free memory
+//             URL.revokeObjectURL(img.src);  
 //         }
 
 //         img.src = URL.createObjectURL(this.files[0]);
@@ -337,5 +333,27 @@ closeChatBtn.forEach(function(closeitem){
         
     });
 });
+// Back button 
+let backBtn = document.querySelectorAll(".back-btn");
+backBtn.forEach(function (btnitem) {
+    btnitem.addEventListener("click", function () {
+        let parentofParent = btnitem.parentNode.parentElement;
+        parentofParent.style.display = "none";
+         
+         document.querySelectorAll(".active-li-top").forEach(function (element) {
+            element.classList.remove("active-li-top");
+        });
+        document.querySelector("#user-listingview").classList.add("active-li-top");
+        document.querySelector('div[data-attr="user-listingview"]').style.display = "block";
+    });
+});
+
+
 
 });
+
+
+
+
+
+
