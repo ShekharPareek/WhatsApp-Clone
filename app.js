@@ -357,3 +357,15 @@ backBtn.forEach(function (btnitem) {
 
 
 
+// Staus Popup
+
+$(function() {
+    $('#naresh-tak,').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+    });
+});
