@@ -194,14 +194,7 @@ dropdownBtn.addEventListener("click", function () {
         dropdown.style.display = "none";
         dropdownBtn.classList.remove("active-li-top");
     } else {
-        dropdown.style.display = "block";
-
-
-
-
-
-
-        
+        dropdown.style.display = "block";       
         dropdownBtn.classList.add("active-li-top");
     }
 });
@@ -276,7 +269,16 @@ function updateProgress(progress) {
 }
 
 
+});
 
+
+
+// close the status-window
+
+let closeStatus = document.getElementById("close-status-window");
+closeStatus.addEventListener("click",function(){
+    let statusModal = document.getElementById('statusModal');
+        statusModal.classList.remove("show-status");
 
 });
 
