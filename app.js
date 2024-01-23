@@ -153,19 +153,6 @@ setTimeout(() => {
             });
     });
 
-    // Upload profile Image & send Image data through send
-
-// document.querySelector('.img-input').addEventListener('change', function() {
-//     if (this.files && this.files[0]) {
-//         var img = document.querySelector('.profile-image');
-//         img.onload = () => {
-//             URL.revokeObjectURL(img.src);  
-//         }
-
-//         img.src = URL.createObjectURL(this.files[0]);
-//     }
-// });
-
 // Tab change of user Chat-message with it profile.
 
 function tabChange(){
@@ -242,6 +229,54 @@ dropdownbtn.forEach(function(button) {
     
 };
 });
+
+
+//  Code for status show and hide
+
+let statusActive = document.querySelectorAll(".status-show");
+
+statusActive.forEach(function (statusItem) {
+    statusItem.addEventListener("click", function () {
+        // Step-1: Show the status
+        const statusModal = document.getElementById('statusModal');
+        statusModal.classList.add("show-status");
+
+        // Step-2: Status progress bar
+        simulateLoading(() => {
+            // Step-3: Close the status window
+            setTimeout(() => {
+                let statusModalElement = document.querySelector('.status-modal');
+                statusModalElement.classList.remove("show-status");
+                // Step-4: Remove the active status border from the user profile
+                let profileBorder = document.querySelector(".profile-image");
+                profileBorder.classList.remove("green-border");
+            }, 600);
+        });
+    });
+});
+
+// Simulate loading progress
+function simulateLoading(callback) {
+    let progress = 0;
+    const interval = setInterval(function () {
+        if (progress < 100) {
+            progress += 10;
+            updateProgress(progress);
+        } else {
+            clearInterval(interval);
+            callback();
+        }
+    }, 600);
+}
+
+// Simulate progress update
+function updateProgress(progress) {
+    const progressBar = document.querySelector('.status-bar-progress');
+    progressBar.style.width = `${progress}%`;
+}
+
+
+
 
 });
 
@@ -350,22 +385,13 @@ backBtn.forEach(function (btnitem) {
 
 
 
+
+
+
+
 });
 
 
 
 
-
-
-// Staus Popup
-
-$(function() {
-    $('#naresh-tak,').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
-});
+   
