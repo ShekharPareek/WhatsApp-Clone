@@ -4,7 +4,7 @@ const userProfile = [
         "username": "Alexgendra",
         "lastseen": "06:00AM",
         "sender":"Alexgendra",
-        "lastmessage": "Hii.. how are you?",
+        "lastmessage": "Are you there ?",
         "profileimg": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDMwNjgzNDh8&ixlib=rb-4.0.3&q=85",
         "bageCount":"1"
     },
@@ -13,7 +13,7 @@ const userProfile = [
         "username": "Rahul Sharma",
         "lastseen": "8:00PM",
         "sender":"Me",
-        "lastmessage": "Phone utha le bro..",
+        "lastmessage": "Hey bro?",
         "profileimg": "https://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg",
     },
     {
@@ -21,8 +21,8 @@ const userProfile = [
         "username": "Naresh Tak",
         "lastseen": "11:00PM",
         "sender":"Naresh Tak",
-        "lastmessage": "Increment ho gya kya bhai ?",
-        "profileimg": "C:\Users\Win10pro\Desktop\Bikaner Office Task\Whatsapp-Web-clone- UI\src\1943774.jpg",
+        "lastmessage": "Chai pilo bhai",
+        "profileimg": "https://unsplash.com/photos/man-sitting-on-rock-surrounded-by-water--Q_t4SCN8c4",
         "bageCount":"2"
     },
     {
@@ -230,10 +230,11 @@ let statusActive = document.querySelectorAll(".status-show");
 
 statusActive.forEach(function (statusItem) {
     statusItem.addEventListener("click", function () {
+        // temporary remove 1st child border after seen status
+       
         // Step-1: Show the status
         const statusModal = document.getElementById('statusModal');
         statusModal.classList.add("show-status");
-
         // Step-2: Status progress bar
         simulateLoading(() => {
             // Step-3: Close the status window
@@ -243,7 +244,7 @@ statusActive.forEach(function (statusItem) {
                 // Step-4: Remove the active status border from the user profile
                 let profileBorder = document.querySelector(".profile-image");
                 profileBorder.classList.remove("green-border");
-            }, 800);
+            }, 18000);
         });
     });
 });
@@ -259,7 +260,7 @@ function simulateLoading(callback) {
             clearInterval(interval);
             callback();
         }
-    }, 600);
+    }, 800);
 }
 
 // Simulate progress update
