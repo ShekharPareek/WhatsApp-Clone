@@ -244,7 +244,7 @@ statusActive.forEach(function (statusItem) {
                 // Step-4: Remove the active status border from the user profile
                 let profileBorder = document.querySelector(".profile-image");
                 profileBorder.classList.remove("green-border");
-            }, 18000);
+            }, 800);
         });
     });
 });
