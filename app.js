@@ -243,7 +243,7 @@ statusActive.forEach(function (statusItem) {
                 // Step-4: Remove the active status border from the user profile
                 let profileBorder = document.querySelector(".profile-image");
                 profileBorder.classList.remove("green-border");
-            }, 600);
+            }, 800);
         });
     });
 });
@@ -270,19 +270,6 @@ function updateProgress(progress) {
 
 
 });
-
-
-
-// close the status-window
-
-let closeStatus = document.getElementById("close-status-window");
-closeStatus.addEventListener("click",function(){
-    let statusModal = document.getElementById('statusModal');
-        statusModal.classList.remove("show-status");
-
-});
-
-
 
 
 
