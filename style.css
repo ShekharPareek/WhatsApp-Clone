@@ -117,7 +117,10 @@ body {
 
 /* common-classes end */
 
-
+.main-loader-container{
+  background-color: #101920;
+  color: white;
+}
 .container {
   width: 100%;
   display: block;
@@ -168,7 +171,7 @@ height: 100%;
 }
 
 .whatsapp-logo {
-  border: 5px solid #dbd9d9;
+  border: 5px solid #00b485;
   border-radius: 100%;
 }
 
@@ -388,6 +391,16 @@ img#uploadedImage {
   color:#a5b1bb;
   cursor: pointer;
 }
+.back-btn{
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.back-btn:hover{
+      background-color: #28323a;
+}
 
 
 .profile-image-container {
@@ -397,8 +410,11 @@ img#uploadedImage {
   border-radius: 50%;
   overflow: hidden;
   object-fit: cover;
-  align-items: end;
+  align-items: flex-end;
   position: relative;
+  align-content: flex-end;
+  justify-content: space-around;
+  margin: 53px 20%;
 }
 .profile-image-container>input{
   position: absolute;
@@ -442,10 +458,7 @@ img#uploadedImage {
   height: 100%;
 }
 
-.whatsapp-logo {
-  border: 5px solid #dbd9d9;
-  border-radius: 100%;
-}
+
 
 .whatsapp-logo .path2 {
   animation: reflect-icon;
@@ -1213,7 +1226,7 @@ span.last-seen {
 }
 
 .green-banner-top {
-  background-color: #101920;
+  background-color:#008069;
   width: 100%;
   height: 61px;
   color: white;
