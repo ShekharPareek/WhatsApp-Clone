@@ -293,13 +293,9 @@ function updateProgress(progress) {
 
 
 function topNavtab(){
-    // Initall acive First child of tab and its content
+    // // Initall active First child of tab and its content
      let tabchildFirst = document.querySelector('.tabs-container>li:nth-of-type(4)');
      tabchildFirst.classList.add("active-li-top");
-    //  tab content 1st child
-    let firstactiveTab = document.querySelector(".left-side-whatsappcontent>div:nth-of-type(1)");
-    firstactiveTab.style.display= "block";
-      
       document.querySelectorAll('.tabs-container>li').forEach(function (element) {
     element.addEventListener("click",function(event){
         let target = this.id;
@@ -307,11 +303,13 @@ function topNavtab(){
         document.querySelectorAll('.tabs-container>li').forEach(function (tab){
             tab.classList.remove("active-li-top");
         }); 
-                     this.classList.add("active-li-top");
-        document.querySelectorAll('.left-side-whatsappcontent>div').forEach(function (section) {
-            section.style.display = 'none';
+         this.classList.add("active-li-top");
+        document.querySelectorAll('.chat-side-bar>div').forEach(function (section) {
+            section.classList.add('d-none');
+            section.classList.remove('block-pannel');
         });
-        document.querySelector('[data-attr="' + target + '"]').style.display = 'block';
+        document.querySelector('[data-attr="' + target + '"]').classList.add('block-pannel');
+        document.querySelector('[data-attr="' + target + '"]').classList.remove('d-none');
     });
 });
 
@@ -363,13 +361,13 @@ let backBtn = document.querySelectorAll(".back-btn");
 backBtn.forEach(function (btnitem) {
     btnitem.addEventListener("click", function () {
         let parentofParent = btnitem.parentNode.parentElement;
-        parentofParent.style.display = "none";
+        parentofParent.classList.add("d-none");
          
          document.querySelectorAll(".active-li-top").forEach(function (element) {
             element.classList.remove("active-li-top");
         });
         document.querySelector("#user-listingview").classList.add("active-li-top");
-        document.querySelector('div[data-attr="user-listingview"]').style.display = "block";
+        // document.querySelector('div[data-attr="user-listingview"]').style.display = "block";
     });
 });
 

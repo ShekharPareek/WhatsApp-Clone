@@ -133,10 +133,32 @@ body {
 }
 
 .col-1 {
-  width: 35%;
+  width: 11%;
   border-right: 0.25px solid #353e45;
   position: relative;
   background-color: #101920;
+}
+
+.block-pannel{
+display: block;
+width: 100%;
+transition: 0.5s width ease;
+}
+
+.chat-list_center {
+  width: 100%;
+  height:100%; 
+  position: relative;
+}
+.left-side-whatsappcontent{
+height: 100%;
+}
+.side_chats-banner-position{
+  position: absolute;
+  left: 0%;
+  top: 0;
+  background-color: #101920;
+  transform: translate(-0, -9%);
 }
 
 .main-loader-container {
@@ -349,12 +371,13 @@ img#uploadedImage {
   height: auto;
   display: block;
 }
-.profileimage-show{
-    width: 42%;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 90px;
-}
+/* .profileimage-show{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 90px;
+  padding-left: 90px;
+} */
 
 .profile-name {
   display: flex;
@@ -1000,7 +1023,7 @@ button.toggle-plus-btn {
 
 /* Media screens */
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
 
   /* //For Tablets */
   .wrapper {
@@ -1022,7 +1045,7 @@ button.toggle-plus-btn {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
 
   /* //For Laptops */
   .wrapper {
@@ -1035,7 +1058,7 @@ button.toggle-plus-btn {
     margin-top:-138px;
   }
   .col-1{
-    width: 31%;
+     width: 11%;
   }
   .download-btn button {
     margin-left: 28%;
@@ -1044,14 +1067,14 @@ button.toggle-plus-btn {
  
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
 
   /* //For Large Laptops */
   .wrapper {
     width: 1022px;
   }
   .col-1{
-    width:31%;
+     width: 11%;
   }
   .profile-icon>img {
     width: 50px;
@@ -1085,7 +1108,7 @@ span.last-seen {
 
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (max-width: 1280px) {
 
   /* //For Big TV's (HD Screens)  */
   .wrapper {
@@ -1123,7 +1146,7 @@ span.last-seen {
 }
 
 
-@media screen and (min-width: 1920px) {
+@media screen and (max-width: 1920px) {
 
   /* //For Projectors or Higher Resolution Screens (Full HD) */
   .wrapper {
@@ -1137,7 +1160,7 @@ span.last-seen {
 
 }
 
-@media screen and (min-width: 3840px) {
+@media screen and (max-width: 3840px) {
 
   /* //For 4K Displays (Ultra HD) */
   .wrapper {
@@ -1190,22 +1213,24 @@ span.last-seen {
 }
 
 .green-banner-top {
-  background-color: #008069;
-    width: 100%;
-    height: 75px;
-    color: white;
-    text-align: left;
-    padding: 15px;
-    display: flex;
-    gap: 60px;
-    font-size: 19px;
-    align-items: center;
-    position: absolute;
-    top: -75px
+  background-color: #101920;
+  width: 100%;
+  height: 61px;
+  color: white;
+  text-align: left;
+  padding: 15px;
+  display: flex;
+  gap: 60px;
+  font-size: 19px;
+  align-items: center;
+  border-bottom: 0.25px solid #353e45;
 }
 
+
 .d-none {
-  display: none;
+  width: 0;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
 }
 
 .green-banner-top div i {

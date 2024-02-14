@@ -228,84 +228,82 @@
                 </div>
               </nav>
             </header>
-            <section>
-              <div class="chat-side-bar">
-                <div class="left-side-whatsappcontent">
-                  <div data-attr="user-listingview" class="d-none">
-                    <div class="chat-search-container">
-                      <div class="search-form-wrapper">
-                        <input
-                          id="search-chat-input"
-                          style="font-size: 14px"
-                          onkeyup="FilteringChat()"
-                          type="text"
-                          placeholder="Search or Start new chat"
-                          name="search"
-                        />
-                        <script>
-                          //   Filter search chat names
-                          function FilteringChat() {
-                            var input, filter;
-                            let userInfos =
-                              document.querySelectorAll(".user-info");
-                            input =
-                              document.getElementById("search-chat-input");
-                            filter = input.value.toUpperCase();
+            <section class="chat-list_center">
+              <div  class="default-tab left-side-whatsappcontent">
+                <div class="chat-search-container">
+                  <div class="search-form-wrapper">
+                    <input
+                      id="search-chat-input"
+                      style="font-size: 14px"
+                      onkeyup="FilteringChat()"
+                      type="text"
+                      placeholder="Search or Start new chat"
+                      name="search"
+                    />
+                    <script>
+                      //   Filter search chat names
+                      function FilteringChat() {
+                        var input, filter;
+                        let userInfos =
+                          document.querySelectorAll(".user-info");
+                        input =
+                          document.getElementById("search-chat-input");
+                        filter = input.value.toUpperCase();
 
-                            userInfos.forEach((chatInfo) => {
-                              let txtValue =
-                                chatInfo.textContent || chatInfo.innerText;
-                              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                chatInfo.parentElement.style.display = "";
-                              } else {
-                                chatInfo.parentElement.style.display = "none";
-                              }
-                            });
+                        userInfos.forEach((chatInfo) => {
+                          let txtValue =
+                            chatInfo.textContent || chatInfo.innerText;
+                          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            chatInfo.parentElement.style.display = "";
+                          } else {
+                            chatInfo.parentElement.style.display = "none";
                           }
-                          FilteringChat();
-                        </script>
-                      </div>
-                      <div onclick="FilterMessage()" class="filter-container">
-                        <i id="filter-search" class="fa-solid fa-filter"></i>
-                        <script>
-                          //filter funtionality
-                          let filterBtn =
-                            document.querySelector(".filter-container");
-
-                          function FilterMessage() {
-                            // Statically display show of filter message
-                            document.querySelector(
-                              ".filter-message"
-                            ).style.display = "flex";
-                            let bagesUndefined =
-                              document.querySelectorAll(".bages");
-
-                            bagesUndefined.forEach((item) => {
-                              if (item.textContent.trim() === "undefined") {
-                                let chatBar = item.closest(".chat-bar");
-                                if (chatBar) {
-                                  chatBar.remove();
-                                }
-                              } else {
-                                document.querySelector(
-                                  ".chat-bar"
-                                ).style.display = "block";
-                              }
-                            });
-                          }
-                        </script>
-                      </div>
-                    </div>
-                    <div class="filter-message green-banner-top">
-                      <div class="back-btn"><i class="fa-solid fa-x"></i></div>
-                      Unread message chat
-                    </div>
-                    <div
-                      data-item="chats-listing"
-                      class="chat-list chat-left-col"
-                    ></div>
+                        });
+                      }
+                      FilteringChat();
+                    </script>
                   </div>
-                  <div data-attr="group-content" class="d-none">
+                  <div onclick="FilterMessage()" class="filter-container">
+                    <i id="filter-search" class="fa-solid fa-filter"></i>
+                    <script>
+                      //filter funtionality
+                      let filterBtn =
+                        document.querySelector(".filter-container");
+
+                      function FilterMessage() {
+                        // Statically display show of filter message
+                        document.querySelector(
+                          ".filter-message"
+                        ).style.display = "flex";
+                        let bagesUndefined =
+                          document.querySelectorAll(".bages");
+
+                        bagesUndefined.forEach((item) => {
+                          if (item.textContent.trim() === "undefined") {
+                            let chatBar = item.closest(".chat-bar");
+                            if (chatBar) {
+                              chatBar.remove();
+                            }
+                          } else {
+                            document.querySelector(
+                              ".chat-bar"
+                            ).style.display = "block";
+                          }
+                        });
+                      }
+                    </script>
+                  </div>
+                </div>
+                <div class="filter-message green-banner-top">
+                  <div class="back-btn"><i class="fa-solid fa-x"></i></div>
+                  Unread message chat
+                </div>
+                <div
+                  data-item="chats-listing"
+                  class="chat-list chat-left-col"
+                ></div>
+              </div> 
+                  <div data-attr="group-content" class=" d-none left-side-whatsappcontent side_chats-banner-position">
                     <div class="green-banner-top">
                       <div class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
@@ -332,10 +330,7 @@
                       </div>
                     </div>
                   </div>
-                  <div
-                    data-attr="profile-icon"
-                    class="d-none profileimage-show"
-                  >
+                  <div data-attr="profile-icon" class=" d-none profileimage-show left-side-whatsappcontent side_chats-banner-position">
                     <div class="profile-image-container">
                       <img
                         id="uploadedImage"
@@ -344,14 +339,11 @@
                         accept="image/png, image/jpeg"
                       />
                     </div>
-                    <div class="upload-image">
-                      <input type="file" id="readUrl" />
-                    </div>
                     <div class="profile-name">
                       Shekhar Pareek<span><i class="fa-solid fa-pen"></i></span>
                     </div>
                   </div>
-                  <div data-attr="status-content" class="d-none">
+                  <div data-attr="status-content" class="d-none left-side-whatsappcontent side_chats-banner-position">
                     <div class="green-banner-top">
                       <div class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
@@ -431,10 +423,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
               </div>
-
               <div class="install-banner">
                 <img
                   width="64"
